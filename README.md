@@ -33,6 +33,7 @@ Trata-se de uma construção de uma API REST de back-end para um aplicativo de b
 * `PostgreSQL` como banco de dados
 * `Swagger` como ferramenta API de documentação
 * `TypeScript` como linguagem de programação
+* `Docker` como container para rodar a aplicação
 
 ## Instalação do projeto
 
