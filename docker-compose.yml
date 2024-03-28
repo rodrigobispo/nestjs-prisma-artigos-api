@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16.2
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
+    volumes:
+      - postgres_articles:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - postgres_network_article
+volumes:
+  postgres_articles:
+networks:
+  postgres_network_article:
