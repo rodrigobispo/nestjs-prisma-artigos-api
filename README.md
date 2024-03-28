@@ -34,12 +34,66 @@ Trata-se de uma construção de uma API REST de back-end para um aplicativo de b
 * `Swagger` como ferramenta API de documentação
 * `TypeScript` como linguagem de programação
 * `Docker` como container para rodar a aplicação
+* `Node.js` v20.3.1
 
 ## Instalação do projeto
 
 ```bash
+# ir até o caminho/path do projeto
+$ cd nestjs-prisma-blog-api
+
+# instalar dependências do projeto
 $ npm install
+
+# inicializar o database PostgreSQL com docker
+$ docker-compose up -d
+
+# aplicar a migrations do database
+$ npx prisma migrate dev
+
+# inicializar o projeto
+$ npm run start:dev
 ```
+Estrutura do projeto:
+```
+nestjs-prisma-blog-api
+  ├── node_modules
+  ├── prisma
+  │   ├── migrations
+  │   ├── schema.prisma
+  │   └── seed.ts
+  ├── src
+  │   ├── app.controller.spec.ts
+  │   ├── app.controller.ts
+  │   ├── app.module.ts
+  │   ├── app.service.ts
+  │   ├── main.ts
+  │   ├── articles
+  │   └── prisma
+  ├── test
+  │   ├── app.e2e-spec.ts
+  │   └── jest-e2e.json
+  ├── README.md
+  ├── .env
+  ├── docker-compose.yml
+  ├── nest-cli.json
+  ├── package-lock.json
+  ├── package.json
+  ├── tsconfig.build.json
+  └── tsconfig.json
+```
+Os arquivos e diretórios são:
+
+* A pasta `src` contém o código da aplicação. Nela há os módulos:
+  * O módulo `app` está situado na raiz do diretório src e é o *entrypoint* do aplicativo. É responsável por iniciar o servidor web.
+  * O módulo `prisma` possui o Prisma Client, seu construtor de consultas do database.
+  * O módulo `articles` definie os *endpoints* para a rota `/articles` e lógica de negócio que acompanha.
+* O módulo `prisma` possui:
+  * O arquivo `schema.prisma` que define o database schema.
+  * A pasta `migrations` que contém o histórico de migration do database.
+  * O arquivo `seed.ts` contém script para propagar/carregar o database de desenvolvimento com dados fictícios.
+* O `docker-compose.yml`, arquivo que define a imagem Docker para uso do banco PostgreSQL.
+* Arquivo `.env` que contém variáveis de ambiente, como conexão com o database PostgreSQL.
 
 ## Como rodar a API
 
@@ -53,6 +107,7 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+Assim, a documentação da API pode ser acessada pela URL `http://localhost:3000/api`
 
 ## Teste
 
