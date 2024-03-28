@@ -22,17 +22,25 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Trata-se de uma construção de uma API REST de back-end para um aplicativo de blog chamado "Median" (um clone simples do Medium). É utilizado framkework [Nest](https://github.com/nestjs/nest) no projeto, sendo iniciado  um servidor PostgreSQL conectando-se ao Prisma. Por fim, a API REST é documentada com Swagger.
 
-## Installation
+## Tecnologias usadas
+
+* `NestJS` como backend framework
+* `Prisma` como Object-Relational Mapper (ORM)
+* `PostgreSQL` como banco de dados
+* `Swagger` como ferramenta API de documentação
+* `TypeScript` como linguagem de programação
+
+## Instalação do projeto
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+## Como rodar a API
 
 ```bash
 # development
@@ -45,7 +53,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Teste
 
 ```bash
 # unit tests
@@ -57,17 +65,12 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Endpoints
 
-## Support
+Os *endpoints REST* podem ser visualizados através do swagger, pela URL `http://localhost:3000/api` configurada na implementação de `src/main.ts`.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
+## Referências
 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
