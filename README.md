@@ -121,6 +121,16 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Tratamento de erros de persistência
+
+Utilizou-se um filtro de exceções para captura de erros do Prisma com objetivo de retornar o HTTP Status adequado. A criação foi através do comando:
+
+- `npx nest generate filter prisma-client-exception`
+
+Assim, a classe `PrismaClientExceptionFilter` foi modificada estendendo `BaseExceptionFilter` de `@nestjs/core`.
+
+- Catálogo de códigos de erros capturados por `PrismaClientKnownRequestError` - [Prisma / ORM / Reference / Error message reference](https://www.prisma.io/docs/orm/reference/error-reference)
+
 ## Endpoints
 
 Os *endpoints REST* podem ser visualizados através do swagger, pela URL `http://localhost:3000/api` configurada na implementação de `src/main.ts`.
