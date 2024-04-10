@@ -54,6 +54,14 @@ $ npx prisma migrate dev
 # inicializar o projeto
 $ npm run start:dev
 ```
+### Geração de uma nova migration - Adicionando User model no banco de dados
+
+Na alteração do modelo, por exemplo, criação de uma tabela User, utilizou-se o comando na pasta raiz do projeto:
+> `npx prisma migrate dev --name "add_user_model"`.
+
+Para execução de script para carga de dados (arquivo `prisma/seed.ts`), usa-se o comando na pasta raiz do projeto:
+> `npx prisma db seed`
+
 Estrutura do projeto:
 ```
 nestjs-prisma-blog-api
